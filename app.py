@@ -43,7 +43,7 @@ def get_web_context(query):
         return ""
 
 # --- 5. Newton UI ---
-st.title("🤖 I am Albert")
+st.title("🤖 I am Newton")
 st.caption("Now supporting Images, PDFs, and Web Search")
 
 # Sidebar for File Uploads
@@ -62,7 +62,7 @@ for msg in st.session_state.messages:
         st.markdown(msg["content"])
 
 # --- 6. CHAT LOGIC ---
-if prompt := st.chat_input("Ask Albert about your file or the web..."):
+if prompt := st.chat_input("Ask Newton about your file or the web..."):
     st.session_state.messages.append({"role": "user", "content": prompt})
     with st.chat_message("user"):
         st.markdown(prompt)
@@ -77,7 +77,7 @@ if prompt := st.chat_input("Ask Albert about your file or the web..."):
                 is_image = True
                 base64_image = encode_image(uploaded_file)
             else:
-                with st.spinner("Albert is reading your document..."):
+                with st.spinner("Newton is reading your document..."):
                     file_context = extract_text(uploaded_file)
 
         # Build the Prompt
@@ -119,6 +119,7 @@ if prompt := st.chat_input("Ask Albert about your file or the web..."):
             
             response_placeholder.markdown(full_response)
         except Exception as e:
-            st.error(f"Albert error: {str(e)}")
+            st.error(f"Newton error: {str(e)}")
+
 
     st.session_state.messages.append({"role": "assistant", "content": full_response})
