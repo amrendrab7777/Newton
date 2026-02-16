@@ -6,7 +6,7 @@ from PyPDF2 import PdfReader
 import docx
 
 # --- 1. PAGE CONFIGURATION ---
-st.set_page_config(page_title="Newton", page_icon="🤖", layout="centered")
+st.set_page_config(page_title="Newton AI", page_icon="🤖", layout="centered")
 
 # --- 2. SECURE API LOADING ---
 try:
@@ -123,4 +123,5 @@ if prompt := st.chat_input("Ask Newton about your file or the web..."):
 
 
     st.session_state.messages.append({"role": "assistant", "content": full_response})
+
 
