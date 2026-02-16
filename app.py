@@ -91,7 +91,7 @@ if prompt := st.chat_input("Ask Newton about your file or the web..."):
 
         try:
             # If it's an image, use the Vision Model. Otherwise, use the standard Llama model.
-            model_to_use = "llama-3.2-11b-vision-preview" if is_image else "llama-3.3-70b-versatile"
+            model_to_use = "meta-llama/llama-4-scout-17b-16e-instruct" if is_image else "llama-3.3-70b-versatile"
             
             # Prepare messages
             messages = []
@@ -123,3 +123,4 @@ if prompt := st.chat_input("Ask Newton about your file or the web..."):
 
 
     st.session_state.messages.append({"role": "assistant", "content": full_response})
+
