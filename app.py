@@ -43,7 +43,7 @@ def get_web_context(query):
         return ""
 
 # --- 5. Newton UI ---
-st.title("🤖 I am Newton")
+st.title("🤖 Newton AI")
 st.caption("Now supporting Images, PDFs, and Web Search")
 
 # Sidebar for File Uploads
@@ -123,5 +123,6 @@ if prompt := st.chat_input("Ask Newton about your file or the web..."):
 
 
     st.session_state.messages.append({"role": "assistant", "content": full_response})
+
 
 
